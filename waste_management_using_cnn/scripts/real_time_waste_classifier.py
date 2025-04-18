@@ -9,7 +9,7 @@ import torch.nn as nn
 # ----------- 1. Load YOLOv5 dari PyTorch Hub ------------
 yolo_model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
 
-# ----------- 2. Load CNN kamu dari .pth ------------
+# ----------- 2. Load CNN dari .pth ------------
 # Buat ulang struktur model CNN (ResNet18)
 cnn_model = resnet18(weights=ResNet18_Weights.DEFAULT)
 cnn_model.fc = nn.Linear(cnn_model.fc.in_features, 2)  # 2 kelas: Organik dan Recyclable
